@@ -2,6 +2,7 @@ package com.example.myfirstapplication
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
+import com.agoda.kakao.screen.Screen.Companion.onScreen
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -18,6 +19,7 @@ class MainPageTest {
     @Test
     fun checkTextView() {
         activityTestRule.launchActivity(null)
+
         mainPage.checkTextElementById(mainPage.getTitle(), "Генератор квестов онлайн")
         mainPage.checkTextElementById(mainPage.getWarnTitle(), "Пусть он даже и не онлайн, но всем ведь пофиг")
         mainPage.checkTextElementById(mainPage.getTextLocality(), "Выберите местность")
@@ -35,5 +37,34 @@ class MainPageTest {
 
         secondPage.checkTextElementById(secondPage.getQuest(), "Прогнать разбойников")
         secondPage.checkTextElementById(secondPage.getReward(), "100 золотых")
+    }
+
+    @Test
+    fun checkTextViewKaspresso() {
+        activityTestRule.launchActivity(null)
+
+        onScreen<MainScreen> {
+            title { hasText("Генератор квестов онлайн") }
+            warnTitle { hasText("Пусть он даже и не онлайн, но всем ведь пофиг") }
+            textLocality{hasText("Выберите местность")}
+            textTime{hasText("Выберите время")}
+            buttonGetQuest{hasText("Получить квест")}
+        }
+    }
+
+    @Test
+    fun checkCreateQuestKaspresso() {
+        activityTestRule.launchActivity(null)
+
+        onScreen<MainScreen> {
+            spinnerLocality {click()}
+            localityForest {click()}
+            radioNight {click()}
+            buttonGetQuest {click()}
+        }
+        onScreen<SecondPage.SecondScreen> {
+            quest {hasText("Прогнать разбойников")}
+            reward {hasText("100 золотых")}
+        }
     }
 }
