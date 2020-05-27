@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MyFirstApplication</string>
+    <string name="hello">0</string>
+    <string name="random_text">Это случайное число между 0 и %1d.</string>
+    <string name="title">Генератор квестов онлайн</string>
+    <string name="warning_title">Пусть он даже и не онлайн, но всем ведь пофиг</string>
+    <string name="locality">Выберите местность</string>
+    <string name="time">Выберите время</string>
+    <string name="reward">Выберите награду</string>
+    <string name="gold">Золото:</string>
+    <string name="exp">Опыт:</string>
+    <string name="get_quest">Получить квест</string>
+    <string-array name="array_locality">
+        <item>Снег</item>
+        <item>Пустыня</item>
+        <item>Лес</item>
+        <item>Горы</item>
+        <item>Море</item>
+    </string-array>
+    <string name="button_get">Получить квест</string>
+</resources>
