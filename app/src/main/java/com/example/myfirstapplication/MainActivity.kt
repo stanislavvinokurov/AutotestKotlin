@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getQuest(view: View) {
-        var quest = Quest("Какой-то дефолтный квест. Ну зхнаете, приходите вы в деревню, а там вам \"Убей крысу в подвале\". Это он", "Награда")
+        var quest = Quest("Дефолтный квест", "10 золотых")
 
         when (spinner_locality.selectedItem.toString()) {
             "Снег" -> {
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             }
             "Море" -> {
                 quest = if (radiobutton_time_day.isChecked) {
-                    Quest("Проверить рыбацкие сначти рыбаку от мастера", "10 золотых")
+                    Quest("Принести рыбацкие снасти рыбаку от мастера рыбацких стастей", "10 золотых")
                 } else {
                     Quest("Проверить слухи о рыбалке", "100 золотых")
                 }

@@ -21,7 +21,7 @@ class MainPageTest {
         activityTestRule.launchActivity(null)
 
         mainPage.checkTextElementById(mainPage.getTitle(), "Генератор квестов онлайн")
-        mainPage.checkTextElementById(mainPage.getWarnTitle(), "Пусть он даже и не онлайн, но всем ведь пофиг")
+        mainPage.checkTextElementById(mainPage.getWarnTitle(), "Пусть он даже и не онлайн")
         mainPage.checkTextElementById(mainPage.getTextLocality(), "Выберите местность")
         mainPage.checkTextElementById(mainPage.getTime(), "Выберите время")
         mainPage.checkTextElementById(mainPage.getButtonGetQuest(), "Получить квест")
@@ -44,11 +44,11 @@ class MainPageTest {
         activityTestRule.launchActivity(null)
 
         onScreen<MainScreen> {
-            title { hasText("Генератор квестов онлайн") }
-            warnTitle { hasText("Пусть он даже и не онлайн, но всем ведь пофиг") }
-            textLocality{hasText("Выберите местность")}
-            textTime{hasText("Выберите время")}
-            buttonGetQuest{hasText("Получить квест")}
+            title {hasText("Генератор квестов онлайн") }
+            warnTitle {hasText("Пусть он даже и не онлайн") }
+            textLocality {hasText("Выберите местность")}
+            textTime {hasText("Выберите время")}
+            buttonGetQuest {hasText("Получить квест")}
         }
     }
 
