@@ -3,12 +3,13 @@ package com.example.myfirstapplication
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.onScreen
+import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class MainPageTest {
+class MainPageTest : TestCase() {
 
     @get:Rule
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, false)
